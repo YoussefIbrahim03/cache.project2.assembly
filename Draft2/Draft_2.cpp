@@ -148,12 +148,11 @@ int main() {
     for (size_t i = 0; i < memory_access.size(); i++) {
         check(memory_access[i], cache, block_count, hexToDecimal(line_size), index_bits,
               mem_access_time, cache_access_time, total_cycles, offset_bits);
+        printCache(cache);
+        cout << "Hit Ratio: " << (hits / total) << endl;
+        cout << "Miss Ratio: " << (misses / total) << endl;
+        cout << "Total Clock Cycles: " << total_cycles << endl;
     }
-
-    printCache(cache);
-    cout << "Hit Ratio: " << (hits / total) << endl;
-    cout << "Miss Ratio: " << (misses / total) << endl;
-    cout << "Total Clock Cycles: " << total_cycles << endl;
 
     return 0;
 }
